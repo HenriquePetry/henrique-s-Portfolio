@@ -7,12 +7,12 @@ import { projects } from "@/data/projects";
 export default function Projects() {
   return (
     <section id="projects" className="py-24">
-      <Container size="lg">
+      <Container size="xl">
         <Title order={2} mb="xl">
-          Projetos
+          My Portfolio
         </Title>
 
-        <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing="lg">
+        <SimpleGrid cols={{base: 1, sm: 2, md: 3, lg: 4, xl: 4  }} spacing="sm">
           {projects.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
