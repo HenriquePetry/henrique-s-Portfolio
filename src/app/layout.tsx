@@ -20,6 +20,8 @@ const theme = createTheme({
   headings: {
     fontFamily: "var(--font-archivo)",
   },
+  primaryColor: "dark",
+
 });
 
 export default function RootLayout({
