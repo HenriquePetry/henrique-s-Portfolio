@@ -35,14 +35,14 @@ export const projects = [
     url: "https://kleinvillehotel.com.br",
   },
   {
-    image: "/projects/projefarma.webp",
+    image: "/assets/images/projefarma.png",
     title: "Projefarma",
     description: "B2B website designed to present and sell custom furniture solutions for pharmacy chains, supporting new client acquisition and positioning the company’s value proposition.",
     stack: ["React", "JavaScript", "CSS"],
     url: "https://projefarma.com.br",
   },
   {
-    image: "/projects/inovepedrasgres.webp",
+    image: "/assets/images/inovepedras.png",
     title: "Inove Pedras Gres",
     description:
       "Website for a ceramic tile manufacturing company, designed to strengthen brand positioning, showcase products, and support commercial and B2B sales efforts.",
@@ -50,7 +50,7 @@ export const projects = [
     url: "https://inovepedrasgres.com.br",
   },
   {
-    image: "/projects/portfolio.webp",
+    image: "/assets/images//tcc.png",
     title: "TCC",
     description: "Full-stack e-commerce platform built with Next.js and React, featuring Stripe checkout, custom admin dashboard, MongoDB data modeling, and AWS infrastructure for asset storage and scalability.",
     stack: ["Next.js", "Mantine", "Tailwind"],
