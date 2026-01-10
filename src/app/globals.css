@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Força cor branca para texto em dark mode */
+[data-mantine-color-scheme='dark'] {
+  color: white !important;
+}
+
+[data-mantine-color-scheme='dark'] .mantine-Text-root,
+[data-mantine-color-scheme='dark'] .mantine-Title-root,
+[data-mantine-color-scheme='dark'] p,
+[data-mantine-color-scheme='dark'] h1,
+[data-mantine-color-scheme='dark'] h2,
+[data-mantine-color-scheme='dark'] h3 {
+  color: white !important;
+}
+
+[data-mantine-color-scheme='dark'] {
+  background-color: #09090B;
+  color: white;
+}
+
+/* Para garantir que o body também tenha o fundo */
+body {
+  background-color: #09090B;
+}
+
+/* Se usar AppShell ou outros containers do Mantine */
+[data-mantine-color-scheme='dark'] .mantine-AppShell-root {
+  background-color: #09090B;
+}

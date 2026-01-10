@@ -35,9 +35,9 @@ export default function RootLayout({
         <ColorSchemeScript defaultColorScheme="auto" />
       </head>
       <body
-        className={`bg-stone-200 text-stone-900 ${archivo.variable} font-sans`}
+        className={`  ${archivo.variable} font-sans`}
       >
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme} defaultColorScheme="dark">{children}</MantineProvider>
       </body>
     </html>
   );

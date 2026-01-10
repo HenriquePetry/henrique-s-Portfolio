@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import Image from "next/image";
-import heroImage from "@/assets/images/test-foto1.png";
+import heroImage from "@/assets/images/test-foto1.jpg";
 import Button from "@/components/button";
 const Hero: FC = () => {
   return (
