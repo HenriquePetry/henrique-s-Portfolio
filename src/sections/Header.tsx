@@ -38,7 +38,7 @@ const Header: FC = () => {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <div className="size-11 border border-stone-400 bg-stone-200 rounded-full inline-flex items-center justify-center">
+            <div className="size-11 border border-stone-400 black-bg rounded-full inline-flex items-center justify-center">
               <svg
                 width="24"
                 height="24"

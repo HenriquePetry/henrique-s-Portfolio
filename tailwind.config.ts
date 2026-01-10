@@ -5,6 +5,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: {
@@ -25,8 +28,19 @@ const config: Config = {
         },
       },
       colors: {
-        "red-orange" : {
-          500: '#f97316',
+        "white": {
+          500: "#ffffffff",
+        },
+      },
+      animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translateX(calc(-50% - 0.5rem))",
+          },
         },
       },
     },
