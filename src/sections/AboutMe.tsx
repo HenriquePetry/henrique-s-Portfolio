@@ -2,97 +2,73 @@
 
 import Image from "next/image";
 
+/* =======================
+   DATA
+======================= */
+
 const experiences = [
   {
-    role: "Senior IT Analyst | Front-End Developer",
     company: "AZZAS 2154",
-    url: "https://www.azzas2154.com.br",
+    role: "Senior IT Analyst | Front-End Developer",
     period: "Jun 2025 — Present",
-    description: (
-      <>
-        Working on <strong>international e-commerce platforms</strong> for brands
-        such as <strong>Arezzo, Schutz, and Alexandre Birman</strong>, focusing on{" "}
-        <strong>Shopify Plus development</strong>,{" "}
-        <strong>React-based components</strong>, and{" "}
-        <strong>performance optimization</strong>. Responsible for{" "}
-        <strong>GA4</strong> and <strong>Google Tag Manager</strong> (client-side
-        and server-side), <strong>custom DataLayer architecture</strong>, and{" "}
-        <strong>Core Web Vitals optimization</strong>, directly impacting{" "}
-        <strong>conversion rate</strong>, <strong>AOV</strong>, and{" "}
-        <strong>user experience (UX)</strong>.
-      </>
-    ),
     logo: "/assets/logos/AZZAS.PNG",
   },
   {
-    role: "Mid-Level IT Analyst | Front-End Developer",
     company: "Arezzo&Co",
-    url: "https://www.linkedin.com/company/arezzoco/",
+    role: "Mid-Level IT Analyst | Front-End Developer",
     period: "Apr 2023 — Jul 2025",
-    description: (
-      <>
-        Front-end development and technical operations for{" "}
-        <strong>large-scale international e-commerce projects</strong>, working
-        with <strong>Shopify (Liquid)</strong>,{" "}
-        <strong>JavaScript</strong>, and <strong>React</strong>. Actively involved
-        in <strong>bug fixing</strong>, <strong>deploys</strong>,{" "}
-        <strong>platform maintenance</strong>, and{" "}
-        <strong>analytics tracking</strong> using <strong>GA4</strong> and{" "}
-        <strong>GTM</strong>. Close collaboration with{" "}
-        <strong>Marketing</strong>, <strong>CRM</strong>,{" "}
-        <strong>Logistics</strong>, and <strong>Finance teams</strong>.
-      </>
-    ),
-    logo: "/assets/logos/ArezzoCO.png",
+    logo: "/assets/logos/ArezzoCo.png",
   },
   {
-    role: "Junior Front-End Developer",
     company: "Curadoria Digital",
-    url: "https://www.linkedin.com/company/curadoria-digital/",
+    role: "Junior Front-End Developer",
     period: "Apr 2021 — Mar 2023",
-    description: (
-      <>
-        Developed <strong>responsive websites</strong> and{" "}
-        <strong>digital experiences</strong> focused on{" "}
-        <strong>UI/UX</strong>, <strong>performance</strong>, and{" "}
-        <strong>conversion</strong>. Built interfaces using{" "}
-        <strong>HTML</strong>, <strong>CSS</strong>,{" "}
-        <strong>JavaScript</strong>, and{" "}
-        <strong>WordPress (Elementor)</strong>, including{" "}
-        <strong>theme and plugin customization</strong> and{" "}
-        <strong>MySQL integration</strong>. Translated{" "}
-        <strong>Figma</strong> and <strong>Photoshop</strong> designs into{" "}
-        <strong>production-ready</strong> websites.
-      </>
-    ),
     logo: "/assets/logos/curadoria.png",
   },
   {
-    role: "Apprentice",
     company: "The HEINEKEN Company",
-    url: "https://www.theheinekencompany.com/age-gate/1",
+    role: "Apprentice",
     period: "Sep 2018 — Nov 2019",
-    description: (
-      <>
-        Supported <strong>IT and administrative processes</strong>, including{" "}
-        <strong>supplier management</strong>,{" "}
-        <strong>data organization using Excel</strong>, and{" "}
-        <strong>process optimization</strong> through the{" "}
-        <strong>5S methodology</strong>. Developed strong{" "}
-        <strong>communication</strong>, <strong>organization</strong>, and{" "}
-        <strong>problem-solving skills</strong> in a corporate environment.
-      </>
-    ),
     logo: "/assets/logos/heineken.png",
   },
 ];
+
+/* =======================
+   CARD BASE
+======================= */
+
+function Card({
+  title,
+  children,
+  className = "",
+}: {
+  title: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`p-6 rounded-2xl bg-neutral-900/60 border border-white/10 h-full flex flex-col ${className}`}
+    >
+      <h4 className="text-2xl font-bold mb-6">{title}</h4>
+      {children}
+    </div>
+  );
+}
+
+
+/* =======================
+   COMPONENT
+======================= */
 
 export function AboutMe() {
   return (
     <section className="w-full bg-neutral-950 text-white py-24">
       <div className="max-w-[1920px] mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
 
-        {/* LEFT — ABOUT ME */}
+        {/* =======================
+            LEFT — ABOUT ME
+        ======================= */}
         <div className="flex flex-col gap-6 max-w-2xl h-full">
           <h2 className="text-4xl font-bold leading-tight">
             About Me
@@ -104,27 +80,23 @@ export function AboutMe() {
             <strong>5 years of experience</strong> building{" "}
             <strong>high-performance</strong>,{" "}
             <strong>scalable</strong>, and{" "}
-            <strong>conversion-focused e-commerce solutions</strong> for{" "}
-            <strong>international brands</strong>.
+            <strong>conversion-focused e-commerce solutions</strong>.
           </p>
 
           <p className="text-neutral-400 leading-relaxed">
             Specialized in <strong>React</strong>,{" "}
             <strong>Next.js</strong>,{" "}
-            <strong>Shopify (Liquid)</strong>,{" "}
-            <strong>JavaScript</strong>, and{" "}
-            <strong>Web Analytics</strong>, I work at the intersection of{" "}
-            <strong>technology and business</strong>, collaborating with{" "}
+            <strong>Shopify</strong>, and{" "}
+            <strong>Web Analytics</strong>, working closely with{" "}
             <strong>multidisciplinary teams</strong> to deliver{" "}
-            <strong>data-driven</strong>,{" "}
             <strong>user-centric digital experiences</strong>.
           </p>
 
           {/* IMAGE */}
-          <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 mt-8">
+          <div className="relative w-full h-full min-h-[420px] rounded-2xl overflow-hidden border border-white/10 mt-8">
             <Image
               src="/assets/images/1000478769.jpg"
-              alt="Front-end developer workspace"
+              alt="Front-end developer portrait"
               fill
               className="object-cover"
               priority
@@ -132,69 +104,129 @@ export function AboutMe() {
           </div>
         </div>
 
-        {/* RIGHT — WORK EXPERIENCE */}
-        <div>
-          <h3 className="text-4xl font-bold leading-tight mb-6">
-            Work Experience
-          </h3>
+        {/* =======================
+            RIGHT — GRID
+        ======================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-fr items-stretch">
 
-          <div className="flex flex-col gap-6">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="flex gap-5 p-6 rounded-2xl bg-neutral-900/60 border border-white/10 hover:border-white/20 transition"
-              >
-                {/* LOGO */}
-                <a
-                  href={exp.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative w-20 h-20 rounded-xl overflow-hidden bg-white shrink-0"
-                >
-                  <Image
-                    src={exp.logo}
-                    alt={`${exp.company} company logo`}
-                    fill
-                    className="object-contain p-2"
-                  />
-                </a>
-
-                {/* CONTENT */}
-                <div className="flex-1">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                    <h4 className="text-lg font-semibold">
-                      {exp.role}
-                    </h4>
-
-                    <span className="text-sm text-neutral-500">
-                      {exp.period}
-                    </span>
-                  </div>
-
-                  {exp.url ? (
-                    <a
-                      href={exp.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-neutral-300 hover:text-white transition"
-                    >
-                      {exp.company}
-                    </a>
-                  ) : (
-                    <p className="text-sm font-medium text-neutral-400">
-                      {exp.company}
-                    </p>
-                  )}
-
-                  <p className="text-sm text-neutral-300 mt-3 leading-relaxed max-w-2xl">
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+         <Card title="Experience" className="lg:row-span-2">
+  <div className="flex flex-col gap-6 flex-1 justify-between">
+    {experiences.map((exp, index) => (
+      <div
+        key={index}
+        className="flex items-start gap-4"
+      >
+        {/* LOGO */}
+        <div className="relative w-14 h-14 rounded-full overflow-hidden border border-white/10 flex-shrink-0">
+          <Image
+            src={exp.logo}
+            alt={exp.company}
+            fill
+            className="object-cover"
+          />
         </div>
 
+        {/* TEXT */}
+        <div className="flex flex-col">
+          <p className="font-semibold text-white text-base">
+            {exp.company}
+          </p>
+          <p className="text-neutral-400 text-sm leading-snug">
+            {exp.role}
+          </p>
+          <p className="text-pink-400 text-xs mt-1">
+            {exp.period}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</Card>
+
+
+          {/* EDUCATION */}
+          <Card title="Education">
+            <ul className="space-y-5 text-sm">
+              <li>
+                <p className="font-semibold text-white">
+                  Systems Analysis & Development
+                </p>
+                <p className="text-neutral-400">
+                  Universidade XYZ
+                </p>
+                <p className="text-pink-400 text-xs">
+                  2018 — 2021
+                </p>
+              </li>
+
+              <li>
+                <p className="font-semibold text-white">
+                  Front-End Specialization
+                </p>
+                <p className="text-neutral-400">
+                  Online Courses & Certifications
+                </p>
+                <p className="text-pink-400 text-xs">
+                  Ongoing
+                </p>
+              </li>
+            </ul>
+          </Card>
+
+          {/* LANGUAGES */}
+          <Card title="Languages">
+            <ul className="space-y-3 text-sm">
+              <li className="flex justify-between">
+                <span>Portuguese</span>
+                <span className="text-pink-400">Native</span>
+              </li>
+              <li className="flex justify-between">
+                <span>English</span>
+                <span className="text-pink-400">Advanced</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Spanish</span>
+                <span className="text-pink-400">Basic</span>
+              </li>
+            </ul>
+          </Card>
+
+          {/* SKILLS — FULL */}
+          <Card title="Skills" className="lg:col-span-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+              {[
+                "React",
+                "Next.js",
+                "JavaScript",
+                "Shopify Plus",
+                "GA4",
+                "GTM",
+                "Performance",
+                "SEO",
+                "UX/UI",
+              ].map((skill) => (
+                <div
+                  key={skill}
+                  className="flex items-center gap-2 text-neutral-300"
+                >
+                  <span className="text-pink-400">✦</span>
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          {/* CONTACT — FULL */}
+          <Card title="Contact" className="lg:col-span-2">
+            <ul className="grid sm:grid-cols-2 gap-4 text-sm text-neutral-300">
+              <li>📞 +55 11 99999-9999</li>
+              <li>📧 your@email.com</li>
+              <li>🔗 linkedin.com/in/yourprofile</li>
+              <li>📷 instagram.com/yourprofile</li>
+            </ul>
+          </Card>
+
+        </div>
       </div>
     </section>
   );
