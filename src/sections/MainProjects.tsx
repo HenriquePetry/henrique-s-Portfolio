@@ -7,7 +7,7 @@ import { projects } from "@/data/projects";
 export default function Projects() {
   return (
     <section id="projects" className="py-24">
-      <Container size="xl">
+      <Container size="1920">
       <Title
         order={2}
         fw={400} 
