@@ -1,26 +1,125 @@
 .card {
-  background-color: light-dark(
-    var(--mantine-color-white),
-    var(--mantine-color-dark-7)
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(20, 20, 24, 0.7);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* Glow */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.15),
+    transparent 60%
   );
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
-.section {
-  border-bottom: 1px solid
-    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
-  padding-left: var(--mantine-spacing-md);
-  padding-right: var(--mantine-spacing-md);
-  padding-bottom: var(--mantine-spacing-md);
+.card:hover::before {
+  opacity: 1;
 }
 
-.like {
-  color: var(--mantine-color-red-6);
-  width: 20px;
-  height: 20px;
+/* Hover */
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.15);
 }
 
-.label {
-  text-transform: uppercase;
-  font-size: var(--mantine-font-size-xs);
-  font-weight: 700;
+/* IMAGE */
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  transition: transform 0.6s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    transparent 60%
+  );
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+/* CONTENT */
+
+.content {
+  flex: 1;
+}
+
+/* TAGS */
+
+.tag {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c4b5fd;
+
+  border: 1px solid rgba(168, 85, 247, 0.3);
+
+  font-weight: 500;
+}
+
+/* ACTIONS */
+
+.actions {
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition: all 0.3s ease;
+}
+
+.card:hover .actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BUTTONS */
+
+.primaryBtn {
+  background: #7c3aed;
+}
+
+.primaryBtn:hover {
+  background: #6d28d9;
+}
+
+.secondaryBtn {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
 }

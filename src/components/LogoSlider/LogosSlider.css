@@ -1,0 +1,45 @@
+.logos-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: transparent;
+}
+
+.logos-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  animation: scroll 40s linear infinite;
+  /* permite que pausemos a animação no hover */
+  animation-play-state: running;
+}
+
+.logos-container:hover .logos-track {
+  animation-play-state: paused; /* pausa quando o mouse está sobre o container */
+}
+
+.logo-item {
+  flex: 0 0 auto;
+}
+
+/* animação infinita contínua */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logos-track {
+    gap: 2rem;
+  }
+
+  .logo-item img {
+    width: auto;
+    height: 50px;
+  }
+}
